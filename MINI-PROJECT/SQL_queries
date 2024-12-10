@@ -1,0 +1,34 @@
+-- Connect to the PostgreSQL database (inside the container)
+psql -U Azizbek
+
+-- Create the Timetable table
+CREATE TABLE Timetable (
+    course_id SERIAL PRIMARY KEY,
+    course_name VARCHAR(255),
+    day VARCHAR(50),
+    time VARCHAR(50),
+    room VARCHAR(50),
+    level INT
+);
+
+-- Insert Sample Data into the Timetable table
+INSERT INTO Timetable (course_name, day, time, room, level) VALUES
+('Operating Systems', 'Tuesday', '16:30:00', 'Room 114', 1),
+('Webster 101', 'Tuesday', '14:00:00', 'Room 403', 4),
+('System Analysis and Design', 'Monday', '14:00:00', 'Room 307', 3),
+('Math For Computer Science', 'Tuesday', '11:00:00', 'Room 308', 3),
+('Data Structures', 'Friday', '14:00:00', 'Room 205', 2);
+
+-- Optionally, create the Students table
+CREATE TABLE Students (
+    student_id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    level INT
+);
+
+-- Insert Sample Students Data
+INSERT INTO Students (name, level) VALUES
+('Asror Soyibnazarov', 1),
+('Azizbek Eshmurodov', 4),
+('Siroj Uralov', 2),
+('Konstantin Borisov', 2);
